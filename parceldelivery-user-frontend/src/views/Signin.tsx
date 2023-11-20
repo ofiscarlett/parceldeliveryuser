@@ -49,7 +49,7 @@ const Signin: React.FC = () => {
       setSubmissionState('processing');
   
       try {
-        const response = await fetch('http://localhost:3001/login', {
+        const response = await fetch('http://localhost:3001/signin', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

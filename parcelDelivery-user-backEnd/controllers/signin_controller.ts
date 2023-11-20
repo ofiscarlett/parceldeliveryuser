@@ -1,15 +1,15 @@
 import express from 'express';
-import login_model from '../models/login_model';
+import signin_model from '../models/signin_model';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
 const router = express.Router();
 const secretkey = process.env.JWT_SECRET as string;
 
-router.post('/login', async (req, res) => {
+router.post('/signin', async (req, res) => {
     const { userName, password } = req.body;
     try {
-        const user = await login_model.checkifUserExists(userName);
+        const user = await signin_model.checkifUserExists(userName);
         if (!user) {
             return res.status(401).json({ message: 'Username does not exist' });
         }

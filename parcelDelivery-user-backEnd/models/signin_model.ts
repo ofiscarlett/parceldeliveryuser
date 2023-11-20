@@ -8,7 +8,7 @@ interface User {
 }
 
 
-const login_model = {
+const signin_model = {
 
 async checkifUserExists(userName: string){
     const query = `SELECT * FROM user WHERE user_name = ?`;	
@@ -36,4 +36,4 @@ async getLoginUser(userName: string, password: string) {
 } 
 };
 
-export default login_model;
+export default signin_model;
